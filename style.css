@@ -1,10 +1,14 @@
+body{
+  text-align: center;
+}
+
 #container{
   display: flex;
   background-color: aqua;
   flex-wrap: wrap;
   width: 600px;
   height: 600px;
-  margin: auto;
+  margin: 3rem auto;
   align-items: center;
   justify-content: center;
 }

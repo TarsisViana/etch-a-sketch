@@ -1,4 +1,5 @@
 const container = document.querySelector('#container');
+const btn = document.querySelector('button');
 
 function makeGrid(userInput){
 
@@ -10,9 +11,17 @@ function makeGrid(userInput){
     square.style.width = size+'px';
     
     container.appendChild(square);
-  
+    
   }
-  return;
+  
 }
-
+ 
 makeGrid(prompt());
+
+const grid = document.querySelectorAll('.square');
+    console.log(grid)
+    grid.forEach((square)=>{
+      square.addEventListener('mouseover', () =>{
+        square.style.backgroundColor = 'black';
+      })
+    })
