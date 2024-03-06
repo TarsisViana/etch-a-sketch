@@ -9,19 +9,42 @@ function makeGrid(userInput){
     let size = 600/userInput;
     square.style.height = size+'px';
     square.style.width = size+'px';
-    
     container.appendChild(square);
     
   }
-  
+  return;
 }
  
-makeGrid(prompt());
 
-const grid = document.querySelectorAll('.square');
-    console.log(grid)
-    grid.forEach((square)=>{
-      square.addEventListener('mouseover', () =>{
-        square.style.backgroundColor = 'black';
-      })
+
+
+
+btn.addEventListener('click', () => {
+  const gridCheck = document.querySelectorAll('.square');
+  console.log(Array.from(gridCheck));
+  if (gridCheck.length > 0) {
+    gridCheck.forEach((square)=>{
+      container.removeChild(square);
+    });
+  };
+
+  let check = false;
+  let userInput;
+  while (!check){
+    userInput = prompt('How many squares per side?  \n(max:100)');
+
+    if (userInput > 0 && userInput <= 100){
+      check = true;
+    }
+  }
+  
+  makeGrid(userInput);
+
+  const grid = document.querySelectorAll('.square');
+  grid.forEach((square)=>{
+    square.addEventListener('mouseover', () =>{
+      square.style.backgroundColor = 'black';
     })
+  })
+});
+
