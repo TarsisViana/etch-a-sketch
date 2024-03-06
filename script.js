@@ -20,17 +20,19 @@ function makeGrid(userInput){
 
 
 btn.addEventListener('click', () => {
+
+//first check if there is a grid
   const gridCheck = document.querySelectorAll('.square');
   console.log(Array.from(gridCheck));
-  if (gridCheck.length > 0) {
-    gridCheck.forEach((square)=>{
+  if (gridCheck.length > 0) {                 
+    gridCheck.forEach((square)=>{             
       container.removeChild(square);
     });
   };
-
+// get user input
   let check = false;
   let userInput;
-  while (!check){
+  while (!check){   //garantee input between 0 and 100
     userInput = prompt('How many squares per side?  \n(max:100)');
 
     if (userInput > 0 && userInput <= 100){

@@ -4,7 +4,7 @@ body{
 
 #container{
   display: flex;
-  background-color: aqua;
+  background-color: rgb(77, 77, 77);
   flex-wrap: wrap;
   width: 600px;
   height: 600px;
